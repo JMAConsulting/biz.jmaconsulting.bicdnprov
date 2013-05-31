@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<extension key="biz.jmaconsulting.bicdnprov" type="module">
+  <file>bicdnprov</file>
+  <name>Bilingual Canadian State Province</name>  
+  <description>On multilingual sites, only one language is enabled at a time.
+CiviCRM by default stores states and provinces using a standard internalization abbreviation, and renders them according to the language of the current user. Some CiviCRM installations would benefit from saving the province according to the language preference of the user.
+Rather than try to solve the big problem of how to translate all content for a contact into their preferred language, this single purpose extension just replaces the standard core state/province field with a select field showing all Canadian provinces, including separate entries in English and French for provinces as appropriate.</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>JMA Consulting</author>
+    <email>joe.murray@jmaconsulting.biz</email>
+  </maintainer>
+  <releaseDate>2013-05-29</releaseDate>
+  <version>1.0</version>
+  <develStage>alpha</develStage>
+  <compatibility>
+    <ver>4.2</ver>
+  </compatibility>
+  <comments>This is a new, undeveloped module</comments>
+  <civix>
+    <namespace>CRM/Frenchfuture</namespace>
+  </civix>
+</extension>
