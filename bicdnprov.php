@@ -69,8 +69,7 @@ function bicdnprov_civicrm_managed(&$entities) {
   return _bicdnprov_civix_civicrm_managed($entities);
 }
 
-function frenchfuture_civicrm_buildForm($formName, &$form) {
-
+function bicdnprov_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contact_Form_Contact' && $form->elementExists('address[1][state_province_id]')) {
     $form->removeElement('address[1][state_province_id]');
     $form->removeElement('address[1][state_province_id]');
