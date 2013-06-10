@@ -125,14 +125,14 @@ function bicdnprov_civicrm_buildForm($formName, &$form) {
  * alter options to include all states with multilingual
  *
  */
-function bicdnprov_civicrm_customFieldOptions($fieldID, &$options) {
+function bicdnprov_civicrm_customFieldOptions($fieldID, &$options, $detailedFormat = FALSE) {
   
   $groupName = CRM_Core_BAO_CustomField::getNameFromID(array($fieldID));
   if ($groupName[$fieldID]['group_name'] == CUSTOM_GROUP_NAME) {
 
     $options = $states = array();
     $query = "
-SELECT civicrm_state_province.{$field} name, civicrm_state_province.id id
+SELECT civicrm_state_province.name name, civicrm_state_province.id id
   FROM civicrm_state_province
 WHERE country_id = %1
 ORDER BY name";
@@ -174,6 +174,17 @@ ORDER BY name";
       foreach ($states as $value) {
         $options[$value] = $value;
       }
+    }
+    if ($detailedFormat) {
+      $tempArray = array();
+      foreach ($options as $value) {
+        $tempArray[$value] = array( 
+          'id' => $value,
+          'value' => $value,
+          'label' => $value, 
+        );
+      }
+      $options = $tempArray;
     }
   }
 }
